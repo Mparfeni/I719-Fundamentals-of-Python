@@ -1,5 +1,5 @@
 ## Hangman game
-My project that is made for Estonian IT College in Fundamentals of Python course.
+My project that is made for Estonian IT College in Fundamentals of Python course. It is written in Python 3
 
 ## Motivation
 From the beginnig of my studying in IT College i wanted to write something in python. 
