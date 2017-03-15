@@ -21,6 +21,17 @@ def game():
 
 
 def get_guess(word):
+    print_word_with_blanks(word)
     print("Lives left: " + str(lives_left))
     guess = input("Guess a letter or whole word")
     return guess
+
+
+def print_word_with_blanks(word):
+    show_word = ""
+    for letter in word:
+        if guessed_letters.find(letter) > -1:
+            show_word = show_word + letter
+        else:
+            show_word = show_word + "-"
+    print(show_word)
