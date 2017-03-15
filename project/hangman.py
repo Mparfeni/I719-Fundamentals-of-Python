@@ -58,7 +58,9 @@ def one_letter_guess(guess, word):
         lives_left = lives_left - 1
         print(gui.gallows[(len(gui.gallows) - 1) - lives_left])
     guessed_letters = guessed_letters + guess.lower()
-
+    if all_letters_guessed(word):
+        return True
+    return False
 
 
 def whole_word_guess(guess, word):
@@ -69,5 +71,13 @@ def whole_word_guess(guess, word):
         lives_left = lives_left - 1
         print(gui.gallows[(len(gui.gallows) - 1) - lives_left])
         return False
+
+
+def all_letters_guessed(word):
+    for letter in word:
+        if guessed_letters.find(letter.lower()) == -1:
+            return False
+    return True
+game()
 
 
