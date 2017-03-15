@@ -19,3 +19,8 @@ def game():
             print("The word was: " + our_word)
             break
 
+
+def get_guess(word):
+    print("Lives left: " + str(lives_left))
+    guess = input("Guess a letter or whole word")
+    return guess
