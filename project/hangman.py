@@ -1,5 +1,12 @@
 import random
 import dictionary
+import gui
+lives_left = 10
+guessed_letters = ""
+
+
+print(gui.gallows[0])
+lives_left = len(gui.gallows) - 1
 
 
 def choose_a_word():
@@ -35,3 +42,32 @@ def print_word_with_blanks(word):
         else:
             show_word = show_word + "-"
     print(show_word)
+
+
+def guessing(guess, word):
+    if len(guess) > 1 and len(guess) == len(word):
+        return whole_word_guess(guess, word)
+    else:
+        return one_letter_guess(guess, word)
+
+
+def one_letter_guess(guess, word):
+    global guessed_letters
+    global lives_left
+    if word.find(guess) == -1:
+        lives_left = lives_left - 1
+        print(gui.gallows[(len(gui.gallows) - 1) - lives_left])
+    guessed_letters = guessed_letters + guess.lower()
+
+
+
+def whole_word_guess(guess, word):
+    global lives_left
+    if guess.lower() == word.lower():
+        return True
+    else:
+        lives_left = lives_left - 1
+        print(gui.gallows[(len(gui.gallows) - 1) - lives_left])
+        return False
+
+
