@@ -1,7 +1,7 @@
 import random
 import dictionary
 import gui
-lives_left = 10
+lives_left = 12
 guessed_letters = ""
 
 
