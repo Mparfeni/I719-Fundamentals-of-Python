@@ -60,6 +60,7 @@ def one_letter_guess(guess, word):
         lives_left = lives_left - 1
         print(gui.gallows[(len(gui.gallows) - 1) - lives_left])
     guessed_letters = guessed_letters + guess.lower()
+    print(gui.gallows[len(gui.gallows) - lives_left])
     if all_letters_guessed(word):
         return True
     return False
