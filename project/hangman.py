@@ -10,8 +10,8 @@ lives_left = len(gui.gallows) - 1
 
 
 def choose_a_word():
-	word_position = random.randint(0, len(dictionary.words) - 1)
-	return dictionary.words[word_position]
+    word_position = random.randint(0, len(dictionary.words) - 1)
+    return dictionary.words[word_position]
 
 
 def game():
@@ -28,20 +28,22 @@ def game():
 
 
 def get_guess(word):
-    print_word_with_blanks(word)
+    word_with_blanks = print_word_with_blanks(guessed_letters, word)
+    print(word_with_blanks)
+
     print("Lives left: " + str(lives_left))
     guess = input("Guess a letter or whole word")
     return guess
 
 
-def print_word_with_blanks(word):
+def print_word_with_blanks(_guessed_letters, word):
     show_word = ""
     for letter in word:
-        if guessed_letters.find(letter) > -1:
+        if _guessed_letters.find(letter) > -1:
             show_word = show_word + letter
         else:
             show_word = show_word + "-"
-    print(show_word)
+    return show_word
 
 
 def guessing(guess, word):
@@ -78,6 +80,7 @@ def all_letters_guessed(word):
         if guessed_letters.find(letter.lower()) == -1:
             return False
     return True
-game()
 
 
+if __name__ == '__main__':
+    print(game())
